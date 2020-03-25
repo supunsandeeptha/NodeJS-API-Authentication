@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router;
+const router = require('express-promise-router')();
 // controller 
 const UsersController = require('../controllers/users.controllers.js');
 
@@ -9,7 +9,7 @@ router.route('/signup')
 
 // Signin Route
 router.route('/signin')
-.post(UsersController.singIn);
+.post(UsersController.signIn);
 
 // To get the secret
 router.route('/secret')
