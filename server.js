@@ -9,6 +9,9 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 
+// adding the routes
+app.use('/users', require('./app/routes/users.routes.js'));
+
 // variable for port
 const port = process.env.PORT || 3000;
 
