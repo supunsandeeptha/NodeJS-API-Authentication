@@ -18,6 +18,8 @@ app.use('/users', require('./app/routes/users.routes.js'));
 // variable for port
 const port = process.env.PORT || 3000;
 
+//adding the native promise library to avoid warnings
+mongoose.Promise = global.Promise;
 //database connection
 mongoose.connect(databaseconnection.url,{
 }).then(() => {
